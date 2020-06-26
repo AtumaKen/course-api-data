@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title th:text="'Online Shopping - ' + ${title}">Online Shopping -  </title>
+
+    <script>
+        window.menu = '{title}'
+    </script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/myapp.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<!--/*@thymesVar id="userClickHome" type=""*/-->
+<div th:include="fragments/navbar :: navbar"></div>
+
+<!-- Page Content -->
+
+<!-- /.container -->
+<div th:if="${userClickHome == true}" th:include="fragments/content :: content"></div>
+
+<!--this loads about page-->
+<div th:if="${userClickAbout == true}" th:include="fragments/about :: about"></div>
+
+<!--this loads contact us page-->
+<div th:if="${userClickContact == true}" th:include="fragments/contact :: contact"></div>
+<!-- Footer -->
+<div th:include="fragments/footer :: footer"></div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/myapp.js"></script>
+
+
+</body>
+
+</html>
